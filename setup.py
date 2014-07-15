@@ -11,6 +11,13 @@ requirements = open(op.join(CURRENT_DIR, 'requirements.txt')).read()
 setup(name='log_watcher',
     packages=['log_watcher'],
 
+    author='Thomas Kliszowski',
+    author_email='contact@thomaskliszowski.fr',
+    description='Watch and track logs',
+    license='MIT',
+    keywords='watch track log',
+    url='https://github.com/ThomasKliszowski/log_watcher',
+
     version=version,
     include_package_data=True,
     zip_safe=False,
