@@ -33,11 +33,3 @@ def main(file_path, regexp, period):
         # Make sure that we track an empty event each second
         tracker.track()
         time.sleep(1)
-
-# -----
-
-if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        logger.error(e, exc_info=True)

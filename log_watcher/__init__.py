@@ -1,10 +1,11 @@
 import log_watcher
 import imp
 import logging.config
+import os
 
 # -----------------------------------------------------------------------------
 
-PATH_TO_SETTINGS = '/opt/log_watcher/settings.py'
+SETTINGS_PATH = os.environ.get('SETTINGS_PATH', '/opt/log_watcher/settings.py')
 
 # -----------------------------------------------------------------------------
 # Set app settings to log_watcher.settings endpoint
@@ -12,7 +13,7 @@ PATH_TO_SETTINGS = '/opt/log_watcher/settings.py'
 if not hasattr(log_watcher, 'settings'):
     log_watcher.settings = imp.load_source(
         'log_watcher.settings',
-        PATH_TO_SETTINGS)
+        SETTINGS_PATH)
 
 # -----------------------------------------------------------------------------
 # Configure logging

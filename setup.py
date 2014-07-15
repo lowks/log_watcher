@@ -9,6 +9,7 @@ version = '0.1.0'
 requirements = open(op.join(CURRENT_DIR, 'requirements.txt')).read()
 
 setup(name='log_watcher',
+    scripts= ['bin/log_watcher'],
     version=version,
     packages=find_packages(),
     include_package_data=True,
