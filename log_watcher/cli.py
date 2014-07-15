@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 @click.option('--file-path', default='/tmp/kern.log', help='File path to watch.', callback=validators.file_path)
 @click.option('--regexp', default=r'match-this-string', help='Regular expression to match.', callback=validators.regexp)
 @click.option('--period', default=30, help='How many minutes to wait between checks.')
-def main(file_path, regexp, period):
+def cli(file_path, regexp, period):
     # regexp=r'Not tainted|PAX: size overflow detected'
     logger.info('Initializing...')
 
@@ -33,3 +33,14 @@ def main(file_path, regexp, period):
         # Make sure that we track an empty event each second
         tracker.track()
         time.sleep(1)
+
+# -----------------------------------------------------------------------------
+
+def main():
+    try:
+        cli()
+    except Exception as e:
+        logger.error(e, exc_info=True)
+
+if __name__ == '__main__':
+    main()
