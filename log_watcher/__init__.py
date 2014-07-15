@@ -30,8 +30,8 @@ LOGGING = {
     },
     'handlers': {
         'console': {
-            'level':'INFO',
-            'class':'logging.StreamHandler',
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
             'formatter': 'standard',
         },
     },
@@ -47,8 +47,8 @@ LOGGING = {
 from log_watcher import settings
 if hasattr(settings, 'SENTRY_DSN'):
     LOGGING['handlers']['sentry'] = {
-        'level':'ERROR',
-        'class':'raven.handlers.logging.SentryHandler',
+        'level': 'ERROR',
+        'class': 'raven.handlers.logging.SentryHandler',
         'dsn': settings.SENTRY_DSN,
     }
     LOGGING['loggers']['']['handlers'].append('sentry')

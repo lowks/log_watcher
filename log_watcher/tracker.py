@@ -7,6 +7,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 # -----------------------------------------------------------------------------
 
 class Tracker(object):
@@ -28,6 +29,7 @@ class Tracker(object):
 
     def send_data(self):
         raise NotImplementedError
+
 
 # -----
 

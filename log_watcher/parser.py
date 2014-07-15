@@ -8,6 +8,7 @@ CURRENT_YEAR = datetime.now().year
 
 # -----------------------------------------------------------------------------
 
+
 class Parser(object):
     def __init__(self, file_path, regexp):
         self.file_path = file_path
@@ -35,6 +36,7 @@ class Parser(object):
 
     def check_line(self, line):
         raise NotImplementedError
+
 
 # -----
 
